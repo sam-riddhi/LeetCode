@@ -5,7 +5,7 @@ class Solution {
         String str2 = new String();
         for(String t : word1)
         {
-            str1 = str1.concat(t);
+           str1 = str1.concat(t);
         }
         for(String t : word2)
         {
