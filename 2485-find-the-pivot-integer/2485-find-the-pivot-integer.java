@@ -3,13 +3,26 @@ class Solution {
         
         int totalSum = n*(n+1)/2;
         
-        int pivot = (int)Math.sqrt(totalSum);
+        int left = 1;
+        int right = n;
         
-        if (pivot * pivot == totalSum)
+        while (left <= right)
         {
-            return pivot;
+            int mid_pivot = left + (right - left)/2;
+            
+            if (mid_pivot * mid_pivot == totalSum)
+            {
+                return mid_pivot;
+            }
+            else if (mid_pivot * mid_pivot < totalSum)
+            {
+                left = mid_pivot + 1;
+            }
+            else
+            {
+                right = mid_pivot - 1;
+            }
         }
-        
         return -1;
     }
 }
