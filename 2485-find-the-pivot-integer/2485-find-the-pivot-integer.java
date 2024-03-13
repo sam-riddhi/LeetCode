@@ -1,25 +1,15 @@
 class Solution {
     public int pivotInteger(int n) {
         
-        int i = 1;
-        int j = n;
+        int totalSum = n*(n+1)/2;
         
-        int leftSum = 1;
-        int rightSum = n;
+        int pivot = (int)Math.sqrt(totalSum);
         
-        while (i < j)
+        if (pivot * pivot == totalSum)
         {
-            if (leftSum < rightSum)
-            {
-                i++;
-                leftSum += i;
-            }
-            else
-            {
-                j--;
-                rightSum += j;
-            }
+            return pivot;
         }
-        return leftSum == rightSum ? i : -1;
+        
+        return -1;
     }
 }
